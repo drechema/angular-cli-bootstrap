@@ -1,0 +1,31 @@
+<div class="card border-secondary mb-3">
+    <div class="card-header">
+        <h4>
+            <span style="font-weight:bold">IRIS instance APIs</span>
+            <span *ngIf="apis!=null">- Found {{apis.length}} items</span>
+        </h4>
+    </div>
+    <div class="card-body">
+        <span *ngIf="loading" class="fa fa-spinner fa-spin fa-3x fa-fw"></span>
+        <div class="row" *ngIf="!loading">
+            <div class="col-md-12">
+                <table class="table table-responsive table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Class</th>
+                            <th>Namespace</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let api of apis;">
+                            <td><span>{{api.name}}</span></td>
+                            <td><span>{{api.interfaceClass}}</span></td>
+                            <td><span>{{api.namespace}}</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
